@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>My Webpage</title>
-</head>
-<body>
-    <h1>Homepage</h1>
-    <p>Hello</p>
-    <p>{{content}}</p>
-    <!-- <ul id="navigation">
-    {% for item in navigation %}
-        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-    {% endfor %}
-    </ul>
-
-    <h1>My Webpage</h1>
-    {{ a_variable }}
-
-    {# a comment #} -->
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}Home Page{% endblock %}
+{% block content %}
+<h1>Test</h1>
+{% endblock %}

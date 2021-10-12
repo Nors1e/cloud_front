@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, url_for
+from flask import Flask, redirect, render_template, url_for, request
 from markupsafe import escape
 
 
@@ -6,13 +6,26 @@ from markupsafe import escape
 app = Flask(__name__)
 
 
-@app.route("/<name>")
-def home(name):
-    return render_template("index.html", content=name)
+@app.route("/")
+def home():
+    return render_template("base.html", content="Testing")
+
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    if request.method == "POST":
+        user = request.form["nm"]
+        return redirect(url_for("user", usr=user))
+    else:
+        return render_template("base.html")
+
+
+@app.route("/<usr>")
+def user(usr):
+    return f"<h1>{usr}</h1>"
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 
 
