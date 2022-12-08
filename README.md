@@ -1,2 +1,2 @@
 # cloud_front
-front end of cloud pirate
+This is the front end framework for cloud pirate, an application which updates and 
